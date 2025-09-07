@@ -1,0 +1,38 @@
+###
+POST http://localhost:3000/users/register
+Content-Type: application/json
+
+{
+    "username": "mone",
+    "password": "mome1234"
+}
+
+###
+POST http://localhost:3000/users/login
+Content-Type: application/json
+
+{
+    "username": "mone",
+    "password": "mome1234"
+}
+
+###
+@accessToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsImlhdCI6MTc1NzI2MTAxOSwiZXhwIjoxNzU3MjY0NjE5fQ.A9sBPhm2JoDbop5KAo20w0UWgx0aLO6NXOROSDZ6HQ4
+
+###
+GET http://localhost:3000/books
+
+###
+POST http://localhost:3000/books/rent/1
+Content-Type: application/json
+Authorization: Bearer {{accessToken}}
+
+###
+POST http://localhost:3000/books/return/1
+Content-Type: application/json
+Authorization: Bearer {{accessToken}}
+
+###
+DELETE http://localhost:3000/users/delete
+Content-Type: application/json
+Authorization: Bearer {{accessToken}}
