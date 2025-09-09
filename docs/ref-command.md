@@ -1,3 +1,7 @@
+좋습니다 👍 말씀해주신 부분을 반영해서 가이드를 매끄럽게 수정했습니다.
+`schema.prisma` 예시와 함께 설명을 자연스럽게 추가했어요.
+
+---
 
 # Express + Prisma 인증 프로젝트 시작 가이드
 
@@ -88,6 +92,16 @@ mv .env.example .env
 ### 2. 마이그레이션 실행
 
 데이터베이스 모델을 작성한 뒤, 실제 DB에 반영합니다.
+연습용으로 SQLite를 사용할 경우, `schema.prisma`의 `datasource` 블록을 다음과 같이 작성하면 됩니다.
+
+```prisma
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+```
+
+이후 마이그레이션을 실행합니다.
 
 ```bash
 npx prisma migrate dev --name init
@@ -140,3 +154,9 @@ npm start
 
 1. VS Code 확장 프로그램 **SQLite Viewer** 설치
 2. `dev.db` 파일 클릭 → 테이블 및 데이터 조회 가능
+
+---
+
+👉 이렇게 하면 SQLite 연습용 DB 설정 방법이 자연스럽게 포함된 가이드가 됩니다.
+
+혹시 이 문서, **팀원 공유용으로 좀 더 친절하게 (예: 스크린샷이나 예시 모델 추가)** 정리해드릴까요?

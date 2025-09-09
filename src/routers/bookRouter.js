@@ -2,7 +2,7 @@ import express from "express";
 import bookService from "../services/bookService.js";
 import passport from "../lib/passport.js";
 
-const router = express();
+const router = express.Router();
 
 router.get('/', async (req, res, next) => {
     try {

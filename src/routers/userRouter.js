@@ -2,7 +2,7 @@ import express from "express";
 import userService from "../services/userService.js";
 import passport from "../lib/passport.js";
 
-const router = express();
+const router = express.Router();
 
 router.post('/register', async (req, res, next) => {
     try {
